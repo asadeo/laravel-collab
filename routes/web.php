@@ -16,13 +16,15 @@ Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
 Route::resource('products', ProductController::class);
 
-
+// Menampilkan halaman chatbot
 Route::get('/chatbot', function () {
     return view('chatbot');
 });
 
+// Endpoint untuk mengirim pertanyaan ke Llama
 Route::post('/ask-llama', [LlamaController::class, 'ask']);
 
+// Halaman untuk React
 Route::get('/react', function () {
     return view('react');
 });
